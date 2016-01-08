@@ -36,6 +36,6 @@ public class NumberFormatterTest {
 
 	@Test
 	public void test_instance() {
-		assertThat(numberInWords, is(new NumberFormatter().inWords(numberAsInteger)));
+		assertThat(new NumberFormatter().inWords(numberAsInteger), is(numberInWords));
 	}
 }
