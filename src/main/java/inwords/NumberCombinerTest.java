@@ -25,6 +25,11 @@ public class NumberCombinerTest {
 		assertThat(new NumberCombiner().combine(zeroFragment, mockFragment, zeroFragment), is("mock"));
 	}
 
+	@Test
+	public void provide_hundreds_digit_when_only_hundreds_digit_is_present() {
+		assertThat(new NumberCombiner().combine(mockFragment, zeroFragment, zeroFragment), is("mock"));
+	}
+
 	private static class MockNumberFragment implements NumberFragment {
 
 		public String inWords() {
