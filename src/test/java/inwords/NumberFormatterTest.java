@@ -22,7 +22,8 @@ public class NumberFormatterTest {
 			{0, "zero"},
 			{1, "one"},
 			{21, "twenty one"},
-			{105, "one hundred and five"}
+			{105, "one hundred and five"},
+			{1042, "one thousand and forty two"}
 		});
 	}
 
