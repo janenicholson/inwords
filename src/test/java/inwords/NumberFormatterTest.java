@@ -16,4 +16,10 @@ public class NumberFormatterTest {
 		assertThat(formattedNumber, is("zero"));
 	}
 
+	@Test
+	public void provideOneWhenGivenOne() {
+		NumberFormatter numberFormatter = new NumberFormatter();
+		String formattedNumber = numberFormatter.inWords(1);
+		assertThat(formattedNumber, is("one"));
+	}
 }
