@@ -4,7 +4,7 @@ public class OnesNumberFragment implements NumberFragment {
 	private final String[] namesOfNumbers = { "zero", "one", "two", "three", "four", "five" };
 	private final Integer digit;
 	public OnesNumberFragment(Integer digit) {
-		this.digit = digit;
+		this.digit = digit%10;
 	}
 	public String inWords() {
 		if (digit < namesOfNumbers.length)

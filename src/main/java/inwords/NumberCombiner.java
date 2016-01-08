@@ -1,11 +1,19 @@
 package inwords;
 
+import java.util.Arrays;
+import java.util.function.Predicate;
+
 public class NumberCombiner {
 
-	public String combine(NumberFragment largeDigit, NumberFragment middleDigit, NumberFragment smallDigit) {
-		String betweenLargeAndMiddleDigit = largeDigit.isPlaceHolder() ? "" : " and ";
-		String betweenMiddleAndSmallDigit = middleDigit.isPlaceHolder() ? "" : " ";
-		return String.format("%s%s%s%s%s", largeDigit.inWords(), betweenLargeAndMiddleDigit, middleDigit.inWords(), betweenMiddleAndSmallDigit, smallDigit.inWords());
+	public String combine(NumberFragment hundredsDigit, NumberFragment tensDigit, NumberFragment onesDigit) {
+		String betweenLargeAndMiddleDigit = hundredsDigit.isPlaceHolder() || Arrays.stream(new NumberFragment[] {tensDigit, onesDigit}).anyMatch(new IsNotPlaceHolderPredicate()) ? "" : " and ";
+		String betweenMiddleAndSmallDigit = tensDigit.isPlaceHolder() || onesDigit.isPlaceHolder() ? "" : " ";
+		return String.format("%s%s%s%s%s", hundredsDigit.inWords(), betweenLargeAndMiddleDigit, tensDigit.inWords(), betweenMiddleAndSmallDigit, onesDigit.inWords());
 	}
 
+	private static class IsNotPlaceHolderPredicate implements Predicate<NumberFragment> {
+		public boolean test(NumberFragment numberFragment) {
+			return !numberFragment.isPlaceHolder();
+		}
+	}
 }
