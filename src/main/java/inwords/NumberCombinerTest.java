@@ -8,7 +8,6 @@ import org.junit.Test;
 public class NumberCombinerTest {
 
 	private NumberFragment zeroFragment = new TensNumberFragment(0);
-	private NumberFragment mockFragment = new MockNumberFragment();
 
 	@Test
 	public void provide_ones_digit_when_only_ones_value_is_present() {
@@ -32,11 +31,10 @@ public class NumberCombinerTest {
 
 	@Test
 	public void provide_hundreds_and_tens_digit_when_hundreds_and_tens_digits_are_present() {
-		assertThat(new NumberCombiner().combine(mockFragment, mockFragment, zeroFragment), is("mock hundred and mock"));
+		assertThat(new NumberCombiner().combine(mockHundredFragment, mockFragment, zeroFragment), is("mock hundred and mock"));
 	}
 
-	private static class MockNumberFragment implements NumberFragment {
-
+	private NumberFragment mockFragment = new NumberFragment() {
 		public String inWords() {
 			return "mock";
 		}
@@ -44,6 +42,15 @@ public class NumberCombinerTest {
 		public boolean isPlaceHolder() {
 			return false;
 		}
-		
-	}
+	};
+
+	private NumberFragment mockHundredFragment = new NumberFragment() {
+		public String inWords() {
+			return "mock hundred";
+		}
+
+		public boolean isPlaceHolder() {
+			return false;
+		}
+	};
 }
