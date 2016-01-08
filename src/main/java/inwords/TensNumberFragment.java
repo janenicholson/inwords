@@ -7,6 +7,8 @@ public class TensNumberFragment implements NumberFragment {
 		this.digit = digit;
 	}
 	public String inWords() {
-		return namesOfNumbers[digit];
+		if (digit < namesOfNumbers.length)
+			return namesOfNumbers[digit];
+		throw new NumberFormatException(digit + " cannot be represented in English as a single digit");
 	}
 }
