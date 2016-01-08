@@ -3,30 +3,38 @@ package inwords;
 import static org.hamcrest.Matchers.is;
 import static org.junit.Assert.*;
 
+import java.util.Arrays;
+import java.util.List;
+
 import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.junit.runners.Parameterized;
+import org.junit.runners.Parameterized.Parameters;
 
 import inwords.NumberFormatter;
 
+@RunWith(Parameterized.class)
 public class NumberFormatterTest {
 
-	@Test
-	public void provideZeroWhenGivenZero() {
-		NumberFormatter numberFormatter = new NumberFormatter();
-		String formattedNumber = numberFormatter.inWords(0);
-		assertThat(formattedNumber, is("zero"));
+	@Parameters
+	public static List<Object[]> data() {
+		return Arrays.asList(new Object[][] {
+			{0, "zero"},
+			{1, "one"},
+			{21, "twenty one"}
+		});
+	}
+
+	private final int numberAsInteger;
+	private final String numberInWords;
+
+	public NumberFormatterTest(int numberAsInteger, String numberInWords) {
+		this.numberAsInteger = numberAsInteger;
+		this.numberInWords = numberInWords;
 	}
 
 	@Test
-	public void provideOneWhenGivenOne() {
-		NumberFormatter numberFormatter = new NumberFormatter();
-		String formattedNumber = numberFormatter.inWords(1);
-		assertThat(formattedNumber, is("one"));
-	}
-
-	@Test
-	public void provideTwentyOneWhenGivenTwentyOne() {
-		NumberFormatter numberFormatter = new NumberFormatter();
-		String formattedNumber = numberFormatter.inWords(21);
-		assertThat(formattedNumber, is("twenty one"));
+	public void test_instance() {
+		assertThat(numberInWords, is(new NumberFormatter().inWords(numberAsInteger)));
 	}
 }
