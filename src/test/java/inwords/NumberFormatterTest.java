@@ -22,4 +22,11 @@ public class NumberFormatterTest {
 		String formattedNumber = numberFormatter.inWords(1);
 		assertThat(formattedNumber, is("one"));
 	}
+
+	@Test
+	public void provideTwentyOneWhenGivenTwentyOne() {
+		NumberFormatter numberFormatter = new NumberFormatter();
+		String formattedNumber = numberFormatter.inWords(21);
+		assertThat(formattedNumber, is("twenty one"));
+	}
 }
