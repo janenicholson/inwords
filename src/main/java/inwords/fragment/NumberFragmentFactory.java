@@ -8,15 +8,15 @@ import java.util.stream.Collectors;
 public class NumberFragmentFactory {
 	public static List<NumberFragment> create(int number) {
 		return Arrays.stream(createFromNumber(number))
-				.filter(li -> !li.isPlaceHolder())
+				.filter(numberFragment -> !numberFragment.isPlaceHolder())
 				.collect(Collectors.collectingAndThen(Collectors.toList(), placeHolderForZero()));
 	}
 
 	private static Function<List<NumberFragment>, List<NumberFragment>> placeHolderForZero() {
 		return new Function<List<NumberFragment>, List<NumberFragment>>() {
 			@Override
-			public List<NumberFragment> apply(List<NumberFragment> t) {
-				return (!t.isEmpty()) ? t : Arrays.<NumberFragment>asList(new OnesNumberFragment(0));
+			public List<NumberFragment> apply(List<NumberFragment> list) {
+				return (!list.isEmpty()) ? list : Arrays.<NumberFragment>asList(new OnesNumberFragment(0));
 			}
 		};
 	}
