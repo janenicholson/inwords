@@ -1,7 +1,7 @@
 package inwords;
 
 public class OnesNumberFragment implements NumberFragment {
-	private final String[] namesOfNumbers = { "zero", "one", "two", "three", "four", "five" };
+	private final String[] namesOfNumbers = { "zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine" };
 	private final Integer digit;
 	public OnesNumberFragment(Integer digit) {
 		this.digit = digit%10;

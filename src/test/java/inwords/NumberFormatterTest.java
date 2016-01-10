@@ -23,7 +23,11 @@ public class NumberFormatterTest {
 			{1, "one"},
 			{21, "twenty one"},
 			{105, "one hundred and five"},
-			{1042, "one thousand and forty two"}
+			{123, "one hundred and twenty three"},
+			{1005, "one thousand and five"},
+			{1042, "one thousand and forty two"},
+			{1105, "one thousand one hundred and five"},
+			{45781, "forty five thousand seven hundred and eighty one"}
 		});
 	}
 
