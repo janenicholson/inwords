@@ -29,7 +29,8 @@ public class NumberFormatterTest {
 			{1105, "one thousand one hundred and five"},
 			{45781, "forty five thousand seven hundred and eighty one"},
 			{945781, "nine hundred and forty five thousand seven hundred and eighty one"},
-			{56945781, "fifty six million nine hundred and forty five thousand seven hundred and eighty one"}
+			{56945781, "fifty six million nine hundred and forty five thousand seven hundred and eighty one"},
+			{999999999, "nine hundred and ninety nine million nine hundred and ninety nine thousand nine hundred and ninety nine"},
 		});
 	}
 
