@@ -18,7 +18,7 @@ public class NumberFragmentFactoryTest {
 	public static Collection<Object[]> data() {
 		return Arrays.asList(new Object[][] {
 				{0, new NumberFragment[] {new OnesNumberFragment(0)}},
-				{10, new NumberFragment[] {new SubHundredsNumberFragment(new TensNumberFragment(10), new OnesNumberFragment(0))}}
+				{10, new NumberFragment[] {new SubHundredsNumberFragment(10)}}
 			});
 	}
 

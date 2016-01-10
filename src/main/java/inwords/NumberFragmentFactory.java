@@ -25,10 +25,7 @@ public class NumberFragmentFactory {
 		return new NumberFragment[] {
 				new ThousandsNumberFragment(number),
 				new HundredsNumberFragment(number),
-				new SubHundredsNumberFragment(
-						new TensNumberFragment(number),
-						new OnesNumberFragment(number)
-						)
+				new SubHundredsNumberFragment(number)
 		};
 	}
 }

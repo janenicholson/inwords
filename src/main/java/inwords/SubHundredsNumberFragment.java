@@ -4,9 +4,9 @@ public class SubHundredsNumberFragment implements NumberFragment {
 	private final TensNumberFragment tensDigit;
 	private final OnesNumberFragment onesDigit;
 	
-	public SubHundredsNumberFragment(TensNumberFragment tensDigit, OnesNumberFragment onesDigit) {
-		this.tensDigit = tensDigit;
-		this.onesDigit = onesDigit;
+	public SubHundredsNumberFragment(Integer number) {
+		this.tensDigit = new TensNumberFragment(number);
+		this.onesDigit = new OnesNumberFragment(number);
 	}
 
 	@Override
