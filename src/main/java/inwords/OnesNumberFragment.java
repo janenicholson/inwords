@@ -14,4 +14,12 @@ public class OnesNumberFragment implements NumberFragment {
 	public boolean isPlaceHolder() {
 		return digit == 0;
 	}
+	@Override
+	public boolean equals(Object other) {
+		return other instanceof OnesNumberFragment && ((OnesNumberFragment)other).digit == this.digit;
+	}
+	@Override
+	public int hashCode() {
+		return digit.hashCode();
+	}
 }
