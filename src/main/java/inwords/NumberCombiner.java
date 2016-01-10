@@ -7,18 +7,17 @@ import java.util.function.Predicate;
 public class NumberCombiner {
 
 	public String combine(List<NumberFragment> numberFragments) {
-		HundredsNumberFragment hundredsDigit = new HundredsNumberFragment(0);
-		TensNumberFragment tensDigit = new TensNumberFragment(0);
-		OnesNumberFragment onesDigit = new OnesNumberFragment(0);
+		StringBuilder sb = new StringBuilder();
 		for (NumberFragment numberFragment : numberFragments) {
-			if (numberFragment instanceof HundredsNumberFragment)
-				hundredsDigit = (HundredsNumberFragment) numberFragment;
-			if (numberFragment instanceof TensNumberFragment)
-				tensDigit = (TensNumberFragment) numberFragment;
-			if (numberFragment instanceof OnesNumberFragment)
-				onesDigit = (OnesNumberFragment) numberFragment;
+			if (!isFirst(sb))
+				sb.append(numberFragment.getPrefix());
+			sb.append(numberFragment.inWords());
 		}
-		return combine(hundredsDigit, tensDigit,onesDigit);
+		return sb.toString();
+	}
+
+	private boolean isFirst(StringBuilder sb) {
+		return sb.length() == 0;
 	}
 
 	public String combine(NumberFragment hundredsDigit, NumberFragment tensDigit, NumberFragment onesDigit) {

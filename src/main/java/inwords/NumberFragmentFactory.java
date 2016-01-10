@@ -24,8 +24,10 @@ public class NumberFragmentFactory {
 	private static NumberFragment[] createFromNumber(int number) {
 		return new NumberFragment[] {
 				new HundredsNumberFragment(number),
-				new TensNumberFragment(number),
-				new OnesNumberFragment(number)
+				new SubHundredsNumberFragment(
+						new TensNumberFragment(number),
+						new OnesNumberFragment(number)
+						)
 		};
 	}
 }

@@ -48,7 +48,9 @@ public class NumberCombinerTest {
 		public String inWords() {
 			return "mock";
 		}
-
+		public String getPrefix() {
+			return " ";
+		}
 		public boolean isPlaceHolder() {
 			return false;
 		}
@@ -57,6 +59,10 @@ public class NumberCombinerTest {
 	private NumberFragment mockHundredFragment = new NumberFragment() {
 		public String inWords() {
 			return "mock hundred";
+		}
+
+		public String getPrefix() {
+			return " ";
 		}
 
 		public boolean isPlaceHolder() {

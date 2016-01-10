@@ -11,6 +11,9 @@ public class OnesNumberFragment implements NumberFragment {
 			return namesOfNumbers[digit];
 		throw new NumberFormatException(digit + " cannot be represented in English as a single digit");
 	}
+	public String getPrefix() {
+		return " ";
+	}
 	public boolean isPlaceHolder() {
 		return digit == 0;
 	}

@@ -14,6 +14,9 @@ public class HundredsNumberFragment implements NumberFragment {
 		return "";
 	}
 
+	public String getPrefix() {
+		return " ";
+	}
 	public boolean isPlaceHolder() {
 		return digitNameRetriever.isPlaceHolder();
 	}
