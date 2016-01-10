@@ -1,9 +1,9 @@
-package inwords;
+package inwords.fragment;
 
-public class OnesNumberFragment implements NumberFragment {
-	private final String[] namesOfNumbers = { "zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine" };
+public class TeenNumberFragment implements NumberFragment {
+	private final String[] namesOfNumbers = { "ten", "eleven", "twelve", "thirteen", "fourteen", "fifteen", "sixteen", "seventeen", "eighteen", "nineteen" };
 	private final Integer digit;
-	public OnesNumberFragment(Integer number) {
+	public TeenNumberFragment(Integer number) {
 		this.digit = number%10;
 	}
 	public String inWords() {
@@ -19,7 +19,7 @@ public class OnesNumberFragment implements NumberFragment {
 	}
 	@Override
 	public boolean equals(Object other) {
-		return other instanceof OnesNumberFragment && ((OnesNumberFragment)other).digit == this.digit;
+		return other instanceof TeenNumberFragment && ((TeenNumberFragment)other).digit == this.digit;
 	}
 	@Override
 	public int hashCode() {

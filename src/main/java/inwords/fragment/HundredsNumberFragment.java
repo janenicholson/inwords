@@ -1,4 +1,4 @@
-package inwords;
+package inwords.fragment;
 
 public class HundredsNumberFragment implements NumberFragment {
 

@@ -1,14 +1,15 @@
-package inwords;
+package inwords.fragment;
 
-public class MillionsNumberFragment implements NumberFragment {
+public class ThousandsNumberFragment implements NumberFragment {
 	private final SubThousandsNumberFragment subThousandsNumberFragment;
-	public MillionsNumberFragment(Integer number) {
-		subThousandsNumberFragment = new SubThousandsNumberFragment(number/1000000);
+
+	public ThousandsNumberFragment(Integer number) {
+		subThousandsNumberFragment = new SubThousandsNumberFragment(number/1000);
 	}
 
 	@Override
 	public String inWords() {
-		return subThousandsNumberFragment.inWords() + " million";
+		return subThousandsNumberFragment.inWords() + " thousand";
 	}
 
 	@Override

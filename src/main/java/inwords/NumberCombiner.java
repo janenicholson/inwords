@@ -2,6 +2,8 @@ package inwords;
 
 import java.util.List;
 
+import inwords.fragment.NumberFragment;
+
 public class NumberCombiner {
 
 	public String combine(List<NumberFragment> numberFragments) {

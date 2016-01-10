@@ -1,4 +1,4 @@
-package inwords;
+package inwords.fragment;
 
 public interface NumberFragment {
 	String inWords();

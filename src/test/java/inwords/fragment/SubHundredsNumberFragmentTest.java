@@ -1,9 +1,11 @@
-package inwords;
+package inwords.fragment;
 
 import static org.hamcrest.Matchers.is;
 import static org.junit.Assert.*;
 
 import org.junit.Test;
+
+import inwords.fragment.SubHundredsNumberFragment;
 
 public class SubHundredsNumberFragmentTest {
 

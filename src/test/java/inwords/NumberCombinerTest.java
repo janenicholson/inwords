@@ -7,6 +7,9 @@ import java.util.Arrays;
 
 import org.junit.Test;
 
+import inwords.fragment.NumberFragment;
+import inwords.fragment.SubHundredsNumberFragment;
+
 public class NumberCombinerTest {
 
 	@Test
