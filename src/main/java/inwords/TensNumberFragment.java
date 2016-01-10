@@ -4,8 +4,8 @@ public class TensNumberFragment implements NumberFragment {
 	private final String[] namesOfNumbers = { "", "ten", "twenty", "thirty", "forty", "fifty", "sixty", "seventy", "eighty", "ninety" };
 	private final Integer digit;
 
-	public TensNumberFragment(Integer digit) {
-		this.digit = (digit/10) % 10;
+	public TensNumberFragment(Integer number) {
+		this.digit = (number/10) % 10;
 	}
 
 	public String inWords() {
