@@ -1,8 +1,6 @@
 package inwords;
 
-import java.util.Arrays;
 import java.util.List;
-import java.util.function.Predicate;
 
 public class NumberCombiner {
 
@@ -18,11 +16,5 @@ public class NumberCombiner {
 
 	private boolean isFirst(StringBuilder sb) {
 		return sb.length() == 0;
-	}
-
-	private static class IsPlaceHolderPredicate implements Predicate<NumberFragment> {
-		public boolean test(NumberFragment numberFragment) {
-			return numberFragment.isPlaceHolder();
-		}
 	}
 }
