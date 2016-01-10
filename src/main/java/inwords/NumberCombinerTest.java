@@ -39,6 +39,11 @@ public class NumberCombinerTest {
 		assertThat(new NumberCombiner().combine(mockHundredFragment, zeroFragment, mockFragment), is("mock hundred and mock"));
 	}
 
+	@Test
+	public void provide_hundreds_tens_and_ones_digit_when_hundreds_tens_and_ones_digits_are_present() {
+		assertThat(new NumberCombiner().combine(mockHundredFragment, mockFragment, mockFragment), is("mock hundred and mock mock"));
+	}
+
 	private NumberFragment mockFragment = new NumberFragment() {
 		public String inWords() {
 			return "mock";
