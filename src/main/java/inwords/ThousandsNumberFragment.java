@@ -1,15 +1,15 @@
 package inwords;
 
 public class ThousandsNumberFragment implements NumberFragment {
-	private final OnesNumberFragment onesNumberFragment;
+	private final SubHundredsNumberFragment subHundredsNumberFragment;
 
 	public ThousandsNumberFragment(Integer digit) {
-		onesNumberFragment = new OnesNumberFragment(digit/1000);
+		subHundredsNumberFragment = new SubHundredsNumberFragment(digit/1000);
 	}
 
 	@Override
 	public String inWords() {
-		return onesNumberFragment.inWords() + " thousand";
+		return subHundredsNumberFragment.inWords() + " thousand";
 	}
 
 	@Override
@@ -19,7 +19,7 @@ public class ThousandsNumberFragment implements NumberFragment {
 
 	@Override
 	public boolean isPlaceHolder() {
-		return onesNumberFragment.isPlaceHolder();
+		return subHundredsNumberFragment.isPlaceHolder();
 	}
 
 }
