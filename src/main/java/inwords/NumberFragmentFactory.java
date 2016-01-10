@@ -16,7 +16,7 @@ public class NumberFragmentFactory {
 		return new Function<List<NumberFragment>, List<NumberFragment>>() {
 			@Override
 			public List<NumberFragment> apply(List<NumberFragment> t) {
-				return (t.size() != 0) ? t : Arrays.<NumberFragment>asList(new OnesNumberFragment(0));
+				return (!t.isEmpty()) ? t : Arrays.<NumberFragment>asList(new OnesNumberFragment(0));
 			}
 		};
 	}
