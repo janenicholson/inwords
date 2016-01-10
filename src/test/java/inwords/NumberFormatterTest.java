@@ -21,6 +21,7 @@ public class NumberFormatterTest {
 		return Arrays.asList(new Object[][] {
 			{0, "zero"},
 			{1, "one"},
+			{11, "eleven"},
 			{21, "twenty one"},
 			{105, "one hundred and five"},
 			{123, "one hundred and twenty three"},
