@@ -1,14 +1,14 @@
 package inwords;
 
 public class MillionsNumberFragment implements NumberFragment {
-	private final SubHundredsNumberFragment subHundredsNumberFragment;
+	private final SubThousandsNumberFragment subThousandsNumberFragment;
 	public MillionsNumberFragment(Integer number) {
-		subHundredsNumberFragment = new SubHundredsNumberFragment(number/1000000);
+		subThousandsNumberFragment = new SubThousandsNumberFragment(number/1000000);
 	}
 
 	@Override
 	public String inWords() {
-		return subHundredsNumberFragment.inWords() + " million";
+		return subThousandsNumberFragment.inWords() + " million";
 	}
 
 	@Override
@@ -18,7 +18,7 @@ public class MillionsNumberFragment implements NumberFragment {
 
 	@Override
 	public boolean isPlaceHolder() {
-		return subHundredsNumberFragment.isPlaceHolder();
+		return subThousandsNumberFragment.isPlaceHolder();
 	}
 
 }

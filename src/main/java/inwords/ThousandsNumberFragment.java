@@ -1,26 +1,15 @@
 package inwords;
 
 public class ThousandsNumberFragment implements NumberFragment {
-	private final HundredsNumberFragment hundredsNumberFragment;
-	private final SubHundredsNumberFragment subHundredsNumberFragment;
+	private final SubThousandsNumberFragment subThousandsNumberFragment;
 
 	public ThousandsNumberFragment(Integer number) {
-		hundredsNumberFragment = new HundredsNumberFragment(number/1000);
-		subHundredsNumberFragment = new SubHundredsNumberFragment(number/1000);
+		subThousandsNumberFragment = new SubThousandsNumberFragment(number/1000);
 	}
 
 	@Override
 	public String inWords() {
-		StringBuilder sb = new StringBuilder();
-		if (hundredsNumberFragment.isPlaceHolder())
-			sb.append(subHundredsNumberFragment.inWords());
-		else if (subHundredsNumberFragment.isPlaceHolder())
-			sb.append(hundredsNumberFragment.inWords());
-		else
-			sb.append(hundredsNumberFragment.inWords() + " and " + subHundredsNumberFragment.inWords());
-		if (sb.length() > 0)
-			sb.append(" thousand");
-		return sb.toString();
+		return subThousandsNumberFragment.inWords() + " thousand";
 	}
 
 	@Override
@@ -30,7 +19,7 @@ public class ThousandsNumberFragment implements NumberFragment {
 
 	@Override
 	public boolean isPlaceHolder() {
-		return hundredsNumberFragment.isPlaceHolder() && subHundredsNumberFragment.isPlaceHolder();
+		return subThousandsNumberFragment.isPlaceHolder();
 	}
 
 }
