@@ -5,7 +5,7 @@ public class HundredsNumberFragment implements NumberFragment {
 	private final OnesNumberFragment digitNameRetriever;
 
 	public HundredsNumberFragment(Integer digit) {
-		digitNameRetriever = new OnesNumberFragment(digit);
+		digitNameRetriever = new OnesNumberFragment(digit/100);
 	}
 
 	public String inWords() {
