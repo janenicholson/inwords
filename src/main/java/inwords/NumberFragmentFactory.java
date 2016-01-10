@@ -23,6 +23,7 @@ public class NumberFragmentFactory {
 
 	private static NumberFragment[] createFromNumber(int number) {
 		return new NumberFragment[] {
+				new MillionsNumberFragment(number),
 				new ThousandsNumberFragment(number),
 				new HundredsNumberFragment(number),
 				new SubHundredsNumberFragment(number)
